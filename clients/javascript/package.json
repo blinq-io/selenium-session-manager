@@ -1,0 +1,33 @@
+{
+  "name": "selenium-session-client",
+  "version": "1.0.0",
+  "description": "Selenium session client, selenium webdriver (for selenium 4), read the cookies information from the session server and apply it to the selenium session.",
+  "homepage": "https://github.com/blinq-io/selenium-session-manager",
+  "author": "blinq.io",
+  "bugs": {
+    "url": "https://github.com/blinq-io/selenium-session-manager/issues"
+  },
+  "keywords": [
+    "selenium",
+    "session",
+    "manager",
+    "buypass",
+    "login",
+    "accelarate",
+    "test",
+    "production"
+  ],
+  "type": "module",
+  "scripts": {
+    "pack": "mkdir build && mkdir build/bin && cp ./src/selenium-session-client.js ./build/bin/selenium-session-client.js && cp ./package.json ./build/package.json",
+    "clean": "rm -rf ./build",
+    "build": "npm run clean && npm run pack"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "chromedriver": "^102.0.0",
+    "geckodriver": "^3.0.1",
+    "node-fetch": "^3.2.5",
+    "selenium-webdriver": "^4.2.0"
+  }
+}
