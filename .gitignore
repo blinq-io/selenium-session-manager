@@ -1,0 +1,7 @@
+server/node_modules
+server/build
+clients/javascript/node_modules
+clients/javascript/build
+clients/java/.gradle
+clients/java/bin
+.DS_Store
