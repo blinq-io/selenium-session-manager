@@ -1,0 +1,49 @@
+{
+  "_comment": "For windos execute: npm config set script-shell \"C:\\Program Files\\git\\bin\\bash.exe\"",
+  "name": "selenium-session",
+  "version": "1.0.3",
+  "description": "Selenium session server. Store and manage your selenium sessions. Enable to accelarate your selenium tests. Buypass your application login screen and enable your test to run on production environment. The selenium session solution include 2 additional parts: 1. Chrome extention - copy your session cookies and store it in the selenium session server 2. Selenium client - read the session information and apply it to the selenium session",
+  "homepage": "https://github.com/blinq-io/selenium-session-manager",
+  "author": "blinq.io",
+  "bugs": {
+    "url": "https://github.com/blinq-io/selenium-session-manager/issues"
+  },
+  "keywords": [
+    "selenium",
+    "session",
+    "manager",
+    "buypass",
+    "login",
+    "accelarate",
+    "test",
+    "production"
+  ],
+  "main": "./selenium-session",
+  "bin": {
+    "selenium-session": "./cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blinq-io/selenium-session-manager"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "mocha --timeout 10000",
+    "start": "node ./src/selenium-session.js",
+    "pack": "mkdir build && cp ./src/selenium-session.js ./build/selenium-session.js && cp ./src/cli.js ./build/cli.js && chmod +x ./build/cli.js && cp ./package.json ./build/package.json && cp ./README.md ./build/README.md && cp -R ./node_modules ./build/node_modules",
+    "clean": "rm -rf ./build",
+    "build": "npm run clean && npm run pack"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0",
+    "node-fetch": "^3.2.5",
+    "nodemon": "^2.0.16",
+    "should": "^13.2.3"
+  }
+}

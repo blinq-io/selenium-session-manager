@@ -1,0 +1,26 @@
+{
+  "name": "Selenium Session Connector",
+  "description": "Copy your browser session cookies and store it in a local server. Then used from withins selenium to bypass your app login process.",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["cookies", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/images/Blinqio16_16.png",
+      "32": "/images/Blinqio32_32.png",
+      "48": "/images/Blinqio48_48.png",
+      "128": "/images/Blinqio128_128.png"
+    }
+  },
+  "icons": {
+    "16": "/images/Blinqio16_16.png",
+    "32": "/images/Blinqio32_32.png",
+    "48": "/images/Blinqio48_48.png",
+    "128": "/images/Blinqio128_128.png"
+  }
+}

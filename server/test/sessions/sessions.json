@@ -1,0 +1,21 @@
+[
+  {
+    "tags": ["aaa"],
+    "cookies": [
+      {
+        "domain": ".web.whatsapp.com",
+        "expirationDate": 1655195816.608999,
+        "hostOnly": false,
+        "httpOnly": true,
+        "name": "key1",
+        "path": "/",
+        "sameSite": "no_restriction",
+        "secure": true,
+        "session": false,
+        "storeId": "0",
+        "value": "value1"
+      }
+    ],
+    "createdAt": "2022-06-02T15:21:27.517Z"
+  }
+]

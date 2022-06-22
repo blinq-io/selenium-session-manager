@@ -1,0 +1,17 @@
+FROM node:16-alpine3.14
+
+WORKDIR /usr/app
+
+COPY package.json .
+
+RUN npm install
+
+COPY ./src ./src
+
+EXPOSE 3000
+
+CMD [ "npm", "run", "start" ]
+
+# docker build -t sessions_server -f .\Dockerfile.dev .
+# docker run -v ${PWD}/tests/sessions:/usr/app/sessions -it -p 3000:3000 --rm sessions_server
+
