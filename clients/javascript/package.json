@@ -20,7 +20,7 @@
   ],
   "type": "module",
   "scripts": {
-    "pack": "mkdir build && mkdir build/bin && cp ./src/selenium-session-client.js ./build/bin/selenium-session-client.js && cp ./package.json ./build/package.json",
+    "pack": "mkdir build && mkdir build/bin && cp ./src/selenium-session-client.js ./build/bin/selenium-session-client.js && cp ./package.json ./build/package.json && cp ./README.md ./build/README.md",
     "clean": "rm -rf ./build",
     "build": "npm run clean && npm run pack"
   },
