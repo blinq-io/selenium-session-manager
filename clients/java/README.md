@@ -14,7 +14,7 @@ implementation group: 'com.blinq.session', name: 'selenium-session-client', vers
 </dependency>
 ```
 
-Following is a code example to integrate it into your Javascript Selenium tests:
+Following is a code example to integrate it into your Java Selenium tests:
 ```java
 import com.blinq.session.SessionClient;
 import org.openqa.selenium.chrome.ChromeDriver;
