@@ -1,11 +1,24 @@
-# Instructions
+# Python client
+Following is a code example to integrate it into your Python Selenium tests:
+```python
+import os
+from time import sleep
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from session_client import init_session
 
-## To install
-cd tests
+def test():
+    driver = webdriver.Chrome('chromedriver')
+    init_session(driver, ['github'])
+    driver.get("https://github.com/")
+    sleep(5)
+    driver.quit()
 
-pip install -r test-requirements.txt
+test()
+```
 
-## To run
-Assume you run from root folder of project 
-
-python clients/python/tests/client_test.py
+To add the dependencies into your project:
+### PIP
+```bash
+pip install selenium-session-client
+```
