@@ -1,4 +1,4 @@
-import { Builder, By, Key } from 'selenium-webdriver';
+import { Builder } from 'selenium-webdriver';
 import chrome from 'selenium-webdriver/chrome.js';
 import * as seleniumSessionClient from '../src/selenium-session-client.js';
 
