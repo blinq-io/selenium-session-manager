@@ -1,19 +1,4 @@
 # Java client
-
-To add the dependencies into your project:
-### Gradle
-```gradle
-implementation group: 'com.blinq.session', name: 'selenium-session-client', version: '1.0.0'
-```
-### Maven
-```maven
-<dependency>
-    <groupId>com.blinq.session</groupId>
-    <artifactId>selenium-session-client</artifactId>
-    <version>1.0.0</version>
-</dependency>
-```
-
 Following is a code example to integrate it into your Java Selenium tests:
 ```java
 import com.blinq.session.SessionClient;
@@ -30,4 +15,18 @@ public class SeleniumTest {
     }
 }
 
+```
+
+To add the dependencies into your project:
+### Gradle
+```gradle
+implementation group: 'com.blinq.session', name: 'selenium-session-client', version: '1.0.0'
+```
+### Maven
+```maven
+<dependency>
+    <groupId>com.blinq.session</groupId>
+    <artifactId>selenium-session-client</artifactId>
+    <version>1.0.0</version>
+</dependency>
 ```
