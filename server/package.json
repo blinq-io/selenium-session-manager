@@ -1,7 +1,7 @@
 {
   "_comment": "For windos execute: npm config set script-shell \"C:\\Program Files\\git\\bin\\bash.exe\"",
   "name": "selenium-session",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Selenium session server. Store and manage your selenium sessions. Enable to accelarate your selenium tests. Buypass your application login screen and enable your test to run on production environment. The selenium session solution include 2 additional parts: 1. Chrome extention - copy your session cookies and store it in the selenium session server 2. Selenium client - read the session information and apply it to the selenium session",
   "homepage": "https://github.com/blinq-io/selenium-session-manager",
   "author": "blinq.io",

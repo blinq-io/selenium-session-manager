@@ -1,6 +1,6 @@
 {
   "name": "Selenium Session Connector",
-  "description": "Copy your browser session cookies and store it in a local server. Then used from withins selenium to bypass your app login process.",
+  "description": "Copy your browser session cookies and store it in a local server. Then used from within selenium to bypass your app login process.",
   "version": "1.0.0",
   "manifest_version": 3,
   "background": {
