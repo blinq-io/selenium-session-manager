@@ -11,7 +11,7 @@ import { Builder } from 'selenium-webdriver';
 import chrome from 'selenium-webdriver/chrome.js';
 import * as seleniumSessionClient from 'selenium-session-client';
 
-let service = new chrome.ServiceBuilder('../java/chromedriver').build();
+let service = new chrome.ServiceBuilder('./chromedriver').build();
 chrome.setDefaultService(service);
 let driver = new Builder().forBrowser('chrome').build();
 
