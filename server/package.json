@@ -29,8 +29,8 @@
   "type": "module",
   "scripts": {
     "test": "mocha --timeout 10000",
-    "start": "node ./src/selenium-session.js",
-    "pack": "mkdir build && cp ./src/selenium-session.js ./build/selenium-session.js && cp ./src/cli.js ./build/cli.js && chmod +x ./build/cli.js && cp ./package.json ./build/package.json && cp ./README.md ./build/README.md && cp -R ./node_modules ./build/node_modules",
+    "start": "node ./src/cli.js",
+    "pack": "mkdir build && cp ./src/selenium-session.js ./build/selenium-session.js && cp ./src/cli.js ./build/cli.js && chmod +x ./build/cli.js && cp ./package.json ./build/package.json && cp ./src/logo.js ./build/bin/logo.js && cp ./README.md ./build/README.md && cp -R ./node_modules ./build/node_modules",
     "clean": "rm -rf ./build",
     "build": "npm run clean && npm run pack"
   },
