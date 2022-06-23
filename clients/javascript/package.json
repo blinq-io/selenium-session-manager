@@ -1,6 +1,6 @@
 {
   "name": "selenium-session-client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Selenium session client, selenium webdriver (for selenium 4), read the cookies information from the session server and apply it to the selenium session.",
   "homepage": "https://github.com/blinq-io/selenium-session-manager",
   "author": "blinq.io",
