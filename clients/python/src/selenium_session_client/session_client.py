@@ -1,11 +1,10 @@
-from asyncio.windows_events import NULL
 import os
 import requests
 from typing import List
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
-session_server_address = NULL
+session_server_address = None
 
 def set_session_server(session_server: str):
     """Set session server address
