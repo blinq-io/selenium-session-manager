@@ -8,6 +8,19 @@ let bat;
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
+async function getSessionsCount() {
+  console.log('### getSessionsCount');
+    const res = await fetch('http://localhost:3001/api/sessions', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    });
+    console.log('### result', res);
+    const data = await res.json();
+    console.log('### data', data);
+    return data.length;
+  }
 const startServer = async () => {
   bat = spawn('node', ['./src/cli.js'], {
     env: {
@@ -77,5 +90,41 @@ describe('SessionServer', function () {
         done();
       });
     });
+    it('Tags overwrite', async function () {
+      const res = await fetch('http://localhost:3001/api/sessions', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      });
+      const data = await res.json();
+      const startSessionsCount = data.length;
+      await fetch('http://localhost:3001/api/session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: '{"tags": ["ccc"], "cookies": { "domain": "aaa.com" }}',
+      });
+      await fetch('http://localhost:3001/api/session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: '{"tags": ["ccc"], "cookies": { "domain": "aaa.com" }}',
+      });
+      const afterRes = await fetch('http://localhost:3001/api/sessions', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      });
+      const afterData = await afterRes.json();
+      const endSessionCount = afterData.length;
+      expect(endSessionCount).to.equals(startSessionsCount + 1);
+  
+//      await done();
+    });
+
   });
 });
