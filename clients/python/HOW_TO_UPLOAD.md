@@ -1,5 +1,9 @@
 # How to upload updated package to PyPI
 
+## Pre-requisites
+pip install twine
+
+
 ## Files to update (after you change your code)
 Update version field in setup.cfg
 
@@ -7,4 +11,6 @@ Update version field in setup.cfg
 python setup.py sdist
 
 ## Upload the package
-pip install selenium_session_client --upgrade
+twine upload dist/*
+
+Enter your PyPi username and password when prompted to do so
