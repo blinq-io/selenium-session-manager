@@ -14,7 +14,7 @@ dotnet nuget push src\SeleniumSessionClient\bin\Debug\SeleniumSessionClient.\<ve
 ### Nuget
 To add the dependencies into your project:
 ```bash
-PM> Install-Package SeleniumSession.Client -Version 1.0.0
+PM> Install-Package SeleniumSessionClient
 ```
 
 ### Code example
