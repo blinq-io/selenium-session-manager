@@ -26,13 +26,13 @@ class SeleniumSessionServer {
     this.app.post('/api/session', (req, res) => {
       console.log('Session was added', req.body, req.body.tags);
       const session = req.body;
-      let indexes = this.searchForSession(session.tags);
-      this.sessions.push(session);
+      let indexes = this.searchForSession(session.tags, false);
       console.log('Found indexes to replace', indexes);
       const filteredSessions = this.sessions.filter((_session, i) =>
-      indexes.includes(i) ? false : true
+        indexes.includes(i) ? false : true
       );
-      
+      this.sessions = filteredSessions;
+      this.sessions.push(session);
       fs.writeFileSync(sessionJsonWorkingFile, JSON.stringify(filteredSessions));
       res.send('Session was stored');
      });
@@ -43,7 +43,7 @@ class SeleniumSessionServer {
      */
     this.app.get('/api/session', (req, res) => {
       const tags = req.query.tags.split(',');
-      let indexes = this.searchForSession(tags);
+      let indexes = this.searchForSession(tags, true);
       console.log('Found indexes to return', indexes);
       if (this.sessions.length > 0) {
         res.send(this.sessions[indexes[indexes.length - 1]].cookies);
@@ -51,20 +51,27 @@ class SeleniumSessionServer {
          res.send('{"error": "No sessions stored"}');
        }
      });
+
+    /*
+     API to get all the sessions
+     */
+    this.app.get('/api/sessions', (req, res) => {
+      res.send(this.sessions);
+    });
+
+    let dataTxt = '[]';
+    try {
+      dataTxt = fs.readFileSync(sessionJsonWorkingFile);
+    } catch {};
+    let dataJson = JSON.parse(dataTxt);
+    this.sessions.push(...dataJson);
+    console.log('Sessions loaded, ' + this.sessions.length + ' sessions found');
+    console.log('Domains:');
+    this.sessions.forEach((session) => {
+      console.log(session.cookies[0].domain);
+    });
      
-     let dataTxt = '[]';
-     try {
-       dataTxt = fs.readFileSync(sessionJsonWorkingFile);
-     } catch {};
-     let dataJson = JSON.parse(dataTxt);
-     this.sessions.push(...dataJson);
-     console.log('Sessions loaded, ' + this.sessions.length + ' sessions found');
-     console.log('Domains:');
-     this.sessions.forEach((session) => {
-       console.log(session.cookies[0].domain);
-     });
-     
-     this.app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+    this.app.listen(port, () => console.log(`Example app listening on port ${port}!`));
   }
   
   
@@ -72,7 +79,7 @@ class SeleniumSessionServer {
   Will search all the session that has matching tags (1 to 1 match, order is ignored)
   Return the indexes of the sessions that match the tags
   */
- searchForSession = (tags) => {
+ searchForSession = (tags, contains) => {
    console.log('Searching for session with tags:', tags);
    let indexes = [];
    if (!tags || tags.length === 0) {
@@ -80,8 +87,10 @@ class SeleniumSessionServer {
      return [];
     }
     this.sessions.forEach((session, i) => {
-      console.log('session tags', session.tags);
       let allInclude = true;
+      if(!contains && tags.length != session.tags.length) {
+        return;
+      }
       tags.forEach((tag) => {
         if (session.tags.indexOf(tag) === -1) {
           allInclude = false;
