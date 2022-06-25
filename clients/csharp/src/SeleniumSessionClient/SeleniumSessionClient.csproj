@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>SeleniumSessionClient</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>DevBlinq</Authors>
+    <Company>blinq.io</Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Selenium.Support" Version="4.3.0" />
+  </ItemGroup>
+
+</Project>

@@ -1,7 +1,11 @@
-using OpenQA.Selenium.Chrome;
+﻿using OpenQA.Selenium.Chrome;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
+using System.Net.Http;
+using System.Collections.Generic;
 
-class SessionClient
+namespace SeleniumSessionClient;
+public class SeleniumSessionClient
 {
     private static string DEFAULT_SESSION_SERVER = "http://localhost:3000";
     private static string? sessionServer = null;
