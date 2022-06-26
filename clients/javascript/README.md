@@ -1,6 +1,7 @@
 # Javascript client
 
-To install run:
+The Javascript Selenium Session Client (SSC) integrates into your tests, retrieves the session information from the Selenium Session Server and applies the session cookies into the running selenium browser.
+To install the Javascript client, run:
 ```bash
 npm install selenium-session-client
 ```
