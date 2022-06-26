@@ -1,4 +1,5 @@
 # Java client
+The Java Selenium Session Client (SSC) integrates into your tests, retrieves the session information from the Selenium Session Server and applies the session cookies into the running selenium browser.
 Following is a code example to integrate it into your Java Selenium tests:
 ```java
 import com.blinq.session.SessionClient;
