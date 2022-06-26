@@ -1,6 +1,6 @@
-# Selenium Session Server
-A simple server that store your sessions (saved by the chrome extention).
-Then can be accessed by your selenium tests to retrieve the session cookies.
+# Selenium Session Server (SSS)
+A server that stores your sessions (saved by the Selenium Session Extension, i.e. the chrome extension), that then can be accessed by your selenium tests to retrieve the session cookies. .
+Note that support to the Selenium Session Manager and its components is available at the BlinqIO forum: https://community.blinq.io/ .
 
 ## You can get the server as npm package [(npm)](https://www.npmjs.com/package/selenium-session)
 
