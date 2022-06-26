@@ -4,6 +4,7 @@
 
 # Selenium-Session-Manager
 The Selenium Session Manager (SSM) project enables easy configuration of your test environment by bypassing your app login screen. This is accomplished by managing your browser session (cookies). 
+Note that support for the Selenium Session Manager and its components is available in the BlinqIO forum: https://community.blinq.io/
 ## Why should I bypass my app login screen?
 There are several advantages to bypass the application login screen:
 1. tests run faster.
