@@ -1,6 +1,9 @@
 # Javascript client
 
 The Javascript Selenium Session Client (SSC) integrates into your tests, retrieves the session information from the Selenium Session Server and applies the session cookies into the running selenium browser.
+
+Note that support to the Selenium Session Manager and its components is available at the BlinqIO forum: https://community.blinq.io/ .
+
 To install the Javascript client, run:
 ```bash
 npm install selenium-session-client
