@@ -18,4 +18,7 @@ The Seleniun Session Manager installation process comprises of three parts: inst
 3. Selenium Session Client (SSC) - a client that integrates into your tests, retrieves the session information from the Selenium Session Server and applies the session cookies into the running selenium browser (https://github.com/blinq-io/selenium-session-manager/tree/master/clients).
 
 
+## Prerequisites
+Your selenium project should be using Selenium 4.x or greater. This version is required due to the use of the DevTools capabilities available in this version.
+The solution will work only for browsers that have DevTools capabilities.
 
