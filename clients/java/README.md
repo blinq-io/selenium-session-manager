@@ -5,14 +5,14 @@ Note that support to the Selenium Session Manager and its components is availabl
 
 Following is a code example to integrate it into your Java Selenium tests:
 ```java
-import SeleniumSessionClient;
+import io.blinq.session.SeleniumSessionClient;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class SeleniumTest {
     public static void main(String...args) throws Exception{
         System.setProperty("webdriver.chrome.driver","chromedriver.exe");
         ChromeDriver driver = new ChromeDriver();
-        SessionClient.initSession(driver, "github");
+        SeleniumSessionClient.initSession(driver, "github");
         driver.get("https://github.com/");
         Thread.sleep(5000);
         driver.quit();
@@ -24,13 +24,13 @@ public class SeleniumTest {
 To add the dependencies into your project:
 ### Gradle
 ```gradle
-implementation group: 'com.blinq.session', name: 'selenium-session-client', version: '1.0.0'
+implementation group: 'io.blinq.SeleniumSessionClient', name: 'SeleniumSessionClient', version: '1.0.0'
 ```
 ### Maven
 ```maven
 <dependency>
-    <groupId>com.blinq.session</groupId>
-    <artifactId>selenium-session-client</artifactId>
+    <groupId>io.blinq.SeleniumSessionClient</groupId>
+    <artifactId>SeleniumSessionClient</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
