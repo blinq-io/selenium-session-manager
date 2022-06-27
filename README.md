@@ -19,6 +19,6 @@ The Seleniun Session Manager installation process comprises of three parts: inst
 
 
 ## Prerequisites
-Your selenium project should be using Selenium 4.x or greater. This version is required due to the use of the DevTools capabilities available in this version.
-The solution will work only for browsers that have DevTools capabilities.
+Your selenium project should be using **Selenium 4.x** or greater. This version is required due to the use of the DevTools capabilities available in this version.
+The solution will work only for **browsers that support DevTools** capabilities.
 
