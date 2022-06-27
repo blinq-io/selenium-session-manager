@@ -1,7 +1,7 @@
 # Java client
 Following is a code example to integrate it into your Java Selenium tests:
 ```java
-import com.blinq.session.SessionClient;
+import SeleniumSessionClient;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class SeleniumTest {

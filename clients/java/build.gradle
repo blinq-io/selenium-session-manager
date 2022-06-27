@@ -1,20 +1,87 @@
 plugins {
-    id 'java'
+    id 'java-library'
+    id 'maven-publish'
+    id 'signing'
 }
-group 'org.example'
-version '1.0-SNAPSHOT'
+
+group 'io.blinq'
+version '1.0.0'
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+artifacts {
+    archives javadocJar, sourcesJar
+}
+
 repositories {
     mavenCentral()
 }
+
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.2.0'
     testImplementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.2.0'
     implementation group: 'org.json', name: 'json', version: '20220320'
-
-
 }
+
 test {
     useJUnitPlatform()
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = 'SeleniumSessionClient'
+            from components.java
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
+            pom {
+                name = 'Selenium Session Client'
+                description = 'Bypass your app login screen by managing your browser session (cookies)\n'
+                url = 'https://github.com/blinq-io/selenium-session-manager\n'
+                licenses {
+                    license {
+                        name = 'MIT License'
+                        url = 'https://github.com/blinq-io/selenium-session-manager/blob/master/clients/java/LICENSE.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'dev-blinq'
+                        name = 'dev-blinq'
+                        email = 'dev@blinq.io'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/blinq-io/selenium-session-manager.git'
+                    developerConnection = 'scm:git:ssh://github.com/blinq-io/selenium-session-manager.git'
+                    url = 'https://github.com/blinq-io/selenium-session-manager'
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            name = "OSSRH"
+            url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+            credentials {
+                username = project.property('ossrhUsername')
+                password = project.property('ossrhPassword')
+            }
+        }
+    }
+}
+
+signing {
+    sign publishing.publications.mavenJava
 }

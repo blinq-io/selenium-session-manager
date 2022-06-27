@@ -1,4 +1,4 @@
-package com.blinq.session;
+package io.blinq.session;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SessionClient {
+public class SeleniumSessionClient {
 
     private static final String DEFAULT_SERVER_URL = "http://localhost:3000";
     private static String sessionServerUrl = null;
@@ -23,9 +23,8 @@ public class SessionClient {
      * Set given cookies in given web driver session
      * @param driver RemoteWebDriver of the chrome browser
      * @param cookies array of cookies to be set
-     * @throws Exception
      */
-    public static void setSessionCookies(WebDriver driver, ArrayList<Object> cookies) throws Exception {
+    public static void setSessionCookies(WebDriver driver, ArrayList<Object> cookies) {
 
         Map<String, Object> cookiesMap = new HashMap<>();
         cookiesMap.put("cookies", cookies);
@@ -42,7 +41,7 @@ public class SessionClient {
      * @param sessionServer - URL of session server
      * @param tags - one ore more tags by which to get cookies
      * @return List of cookies
-     * @throws Exception
+     * @throws Exception Any exception thrown while trying to get cookies from session server
      */
     public static ArrayList<Object> getSessionCookies(String sessionServer, String...tags) throws Exception {
         String tagsTxt = "";
@@ -52,7 +51,6 @@ public class SessionClient {
         URL sessionServerUrl = new URL(sessionServer + "/api/session" + tagsTxt);
         HttpURLConnection con = (HttpURLConnection) sessionServerUrl.openConnection();
         con.setRequestMethod("GET");
-        int responseCode = con.getResponseCode();
         StringBuffer response = new StringBuffer();
 
         try (BufferedReader in = new BufferedReader(new InputStreamReader(
@@ -100,7 +98,7 @@ public class SessionClient {
      * Init WebDriver session with cookies stored in session server
      * @param driver - WebDriver to set cookies
      * @param tags - tags by which to get cookies from session server
-     * @throws Exception
+     * @throws Exception - any exception thrown when trying to init session with cookies
      */
     public static void initSession(WebDriver driver, String ...tags) throws Exception {
         setSessionCookies(driver, getSessionCookies(getSessionServer(), tags));
