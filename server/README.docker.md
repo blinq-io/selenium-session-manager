@@ -3,8 +3,8 @@
 </p>
 
 # Selenium Session Server
-A simple server that store your sessions (saved by the chrome extention).
-Then can be accessed by your selenium tests to retrieve the session cookies.
+A simple server that stores the sessions (saved by the Selenium Session Extension i.e. the chrome extention), that can then be accessed by your selenium tests to retrieve the session cookies.
+Note that support to the Selenium Session Manager and its components is available at the BlinqIO forum: https://community.blinq.io/ .
 [A full project documentation can be found here](https://github.com/blinq-io/selenium-session-manager)
 
 Use:
