@@ -1,14 +1,6 @@
 # C# client
 The C# Selenium Session Client (SSC) integrates into your tests, retrieves the session information from the Selenium Session Server and applies the session cookies into the running selenium browser.
 Note that support to the Selenium Session Manager and its components is available at the BlinqIO forum: https://community.blinq.io/ .
-## Prerequisites
-.Net 6.0 SDK installed
-
-## To Build
-dotnet build
-
-## To upload to nuget.org
-dotnet nuget push src\SeleniumSessionClient\bin\Debug\SeleniumSessionClient.\<version\>.nupkg --api-key API_KEY --source https://api.nuget.org/v3/index.json
 
 ## How to add it to your tests
 
