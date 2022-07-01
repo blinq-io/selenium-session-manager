@@ -1,8 +1,10 @@
 name: C# (.Net) client CI
 on:
   push:
+    paths: clients/csharp/**
     branches: [ "master" ]
   pull_request:
+    paths: clients/csharp/**
     branches: [ "master" ]
 
 jobs:
