@@ -23,6 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - run: cd ${{ github.workspace }}/clients/python
     - uses: actions/checkout@v3
     - name: Set up Python
       uses: actions/setup-python@v3
@@ -31,11 +32,9 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install build
-        working-directory: ${{ github.workspace }}/clients/python
+        pip install build        
     - name: Build package
       run: python -m build
-      working-directory: ${{ github.workspace }}/clients/python
     - name: Publish package
       uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
       with:
