@@ -23,8 +23,8 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - run: cd ${{ github.workspace }}/clients/python
     - uses: actions/checkout@v3
+    - run: cd ${{ github.workspace }}/clients/python
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
