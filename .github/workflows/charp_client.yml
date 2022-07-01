@@ -1,4 +1,4 @@
-name: C# (.Net) client 
+name: C# (.Net) client CI
 on:
   push:
     branches: [ "master" ]
@@ -27,5 +27,5 @@ jobs:
     - name: Publish to nuget.org
       run: |
         cd ${{ github.workspace }}/clients/csharp
-        dotnet nuget push src/SeleniumSessionClient/bin/Debug/SeleniumSessionClient/**.nupkg --api-key ${{ secrets.NUGET_ORG_API_KEY }} --source https://api.nuget.org/v3/index.json
+        dotnet nuget push ./artifacts/**.nupkg --api-key ${{ secrets.NUGET_ORG_API_KEY }} --source https://api.nuget.org/v3/index.json
       
