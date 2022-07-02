@@ -2,10 +2,11 @@ plugins {
     id 'java-library'
     id 'maven-publish'
     id 'signing'
+    id 'io.codearte.nexus-staging' version '0.30.0'
 }
 
 group 'io.blinq'
-version '1.0.0'
+version '1.0.2'
 
 java {
     withJavadocJar()
@@ -75,13 +76,22 @@ publishing {
             name = "OSSRH"
             url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
             credentials {
-                username = project.property('ossrhUsername')
-                password = project.property('ossrhPassword')
+                username = project.property('SONATYPE_USERNAME')
+                password = project.property('SONATYPE_PASSWORD')
             }
         }
     }
 }
 
 signing {
+    def signingKey = findProperty("signingKey")
+    def signingPassword = findProperty("signingPassword")
+    useInMemoryPgpKeys(signingKey, signingPassword)
     sign publishing.publications.mavenJava
+}
+
+nexusStaging {
+    serverUrl = "https://s01.oss.sonatype.org/service/local/"
+    username = project.property('SONATYPE_USERNAME')
+    password = project.property('SONATYPE_PASSWORD')
 }
