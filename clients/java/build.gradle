@@ -84,7 +84,6 @@ publishing {
 }
 
 signing {
-    def signingKeyId = findProperty("SIGNINGKEYID")
     def signingPassword = findProperty("SIGNINGPASSWORD")
 //    def signingKey = findProperty("SIGNINGKEY") //Reading from ENV variable or property does not work
     def signingKey = '''-----BEGIN PGP ARMORED FILE-----
@@ -172,7 +171,7 @@ lMvzAYKp9Li1XGeHkUpwZsAN3LT1/IOc2aZMcjUg2bOHE3xTPQ==
 =qPYo
 -----END PGP ARMORED FILE-----
 '''
-    useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
+    useInMemoryPgpKeys(signingKey, signingPassword)
     sign publishing.publications.mavenJava
 }
 
