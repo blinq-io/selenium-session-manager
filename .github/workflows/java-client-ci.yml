@@ -28,12 +28,12 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '8'
-        distribution: 'temurin'
+        distribution: 'temurin'    
     - name: build and publish
       run: |
-        cd ${{ github.workspace }}/clients/java
-        gradle publish
+        cd ${{ github.workspace }}/clients/java 
+        gradle publish -PSIGNINGKEY=${{secrets.ORG_GRADLE_PROJECT_SIGNINGKEY}} -PSIGNINGPASSWORD=${{secrets.ORG_GRADLE_PROJECT_SIGNINGPASSWORD}} -PSONATYPE_USERNAME={{secrets.ORG_GRADLE_PROJECT_SONATYPE_USERNAME}} -PSONATYPE_PASSWORD={{secrets.ORG_GRADLE_PROJECT_SONATYPE_PASSWORD}}
     - name: closeAndReleaseRepository
       run: |
         cd ${{ github.workspace }}/clients/java
-        gradle closeAndReleaseRepository        
+        gradle closeAndReleaseRepository -PSIGNINGKEY=${{secrets.ORG_GRADLE_PROJECT_SIGNINGKEY}} -PSIGNINGPASSWORD=${{secrets.ORG_GRADLE_PROJECT_SIGNINGPASSWORD}} -PSONATYPE_USERNAME={{secrets.ORG_GRADLE_PROJECT_SONATYPE_USERNAME}} -PSONATYPE_PASSWORD={{secrets.ORG_GRADLE_PROJECT_SONATYPE_PASSWORD}}
