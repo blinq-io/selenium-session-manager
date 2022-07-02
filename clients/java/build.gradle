@@ -84,9 +84,9 @@ publishing {
 }
 
 signing {
-    def signingKeyId = findProperty("signingKeyId")
-    def signingPassword = findProperty("signingPassword")
-//    def signingKey = findProperty("signingKey") Reading from ENV variable or property does not work
+    def signingKeyId = findProperty("SIGNINGKEYID")
+    def signingPassword = findProperty("SIGNINGPASSWORD")
+//    def signingKey = findProperty("SIGNINGKEY") //Reading from ENV variable or property does not work
     def signingKey = '''-----BEGIN PGP ARMORED FILE-----
 Comment: Use "gpg --dearmor" for unpacking
 
