@@ -31,7 +31,7 @@ jobs:
         distribution: 'temurin'    
     - name: build and publish
       run: |
-        cd ${{ github.workspace }}/clients/java
+        cd ${{ github.workspace }}/clients/java 
         gradle publish -PSIGNINGPASSWORD=${{secrets.ORG_GRADLE_PROJECT_SIGNINGPASSWORD}} -PSONATYPE_USERNAME={{secrets.ORG_GRADLE_PROJECT_SONATYPE_USERNAME}} -PSONATYPE_PASSWORD={{secrets.ORG_GRADLE_PROJECT_SONATYPE_PASSWORD}}
     - name: closeAndReleaseRepository
       run: |
