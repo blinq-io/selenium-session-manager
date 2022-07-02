@@ -9,6 +9,7 @@ name: Java client CI
 
 on:
   push:
+    paths: clients/java/**
     branches: [ "master" ]
   pull_request:
     paths: clients/java/**
