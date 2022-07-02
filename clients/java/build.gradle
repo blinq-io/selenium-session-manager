@@ -6,7 +6,7 @@ plugins {
 }
 
 group 'io.blinq'
-version '1.0.2'
+version '1.0.3'
 
 java {
     withJavadocJar()
@@ -92,6 +92,6 @@ signing {
 
 nexusStaging {
     serverUrl = "https://s01.oss.sonatype.org/service/local/"
-    username = project.property('SONATYPE_USERNAME')
-    password = project.property('SONATYPE_PASSWORD')
+    username = findProperty('SONATYPE_USERNAME')
+    password = findProperty('SONATYPE_PASSWORD')
 }
