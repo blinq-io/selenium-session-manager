@@ -85,8 +85,8 @@ publishing {
 
 signing {
     def signingPassword = findProperty("SIGNINGPASSWORD")
-//    def signingKey = findProperty("SIGNINGKEY") //Reading from ENV variable or property does not work
-    def signingKey = '''-----BEGIN PGP ARMORED FILE-----
+    def signingKey = findProperty("SIGNINGKEY") //Reading from ENV variable or property does not work
+/*    def signingKey = '''-----BEGIN PGP ARMORED FILE-----
 Comment: Use "gpg --dearmor" for unpacking
 
 lQWGBGK6Af4BDADCHd03i4YwhZol/5UqbanffIRZaaIwN6gNUlZQCyOFnqeUZ7WM
@@ -170,7 +170,7 @@ g/LYaQxjDMdy4KC039ueP9uatBGLVUQpLICKL4+3F59h2RQhW5iJkKUFf7zwAn/F
 lMvzAYKp9Li1XGeHkUpwZsAN3LT1/IOc2aZMcjUg2bOHE3xTPQ==
 =qPYo
 -----END PGP ARMORED FILE-----
-'''
+'''*/
     useInMemoryPgpKeys(signingKey, signingPassword)
     sign publishing.publications.mavenJava
 }
