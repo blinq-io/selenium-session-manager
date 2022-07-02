@@ -28,15 +28,12 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '8'
-        distribution: 'temurin'
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v3
-      timeout-minutes: 15
+        distribution: 'temurin'    
     - name: build and publish
       run: |
         cd ${{ github.workspace }}/clients/java
-        gradle publish
+        gradle publish -PSIGNINGPASSWORD=${{ secrets.SIGNINGPASSWORD }} -PSONATYPE_USERNAME={{ secrets.SONATYPE_USERNAME }} -PSONATYPE_PASSWORD={{ secrets.SONATYPE_PASSWORD }}
     - name: closeAndReleaseRepository
       run: |
         cd ${{ github.workspace }}/clients/java
-        gradle closeAndReleaseRepository        
+        gradle closeAndReleaseRepository -PSONATYPE_USERNAME={{ secrets.SONATYPE_USERNAME }} -PSONATYPE_PASSWORD={{ secrets.SONATYPE_PASSWORD }}
