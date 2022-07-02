@@ -38,10 +38,10 @@ jobs:
         cd ${{ github.workspace }}/clients/java 
         gradle publish -PSIGNINGPASSWORD="$SIGNINGPASSWORD" -PSONATYPE_USERNAME="$SONATYPE_USERNAME" -PSONATYPE_PASSWORD="$SONATYPE_PASSWORD"
     - name: closeAndReleaseRepository
-      env: |
+      env:
         SIGNINGPASSWORD: ${{ secrets.ORG_GRADLE_PROJECT_SIGNINGPASSWORD }}
-        SONATYPE_USERNAME: {{ secrets.ORG_GRADLE_PROJECT_SONATYPE_USERNAME }}
-        SONATYPE_PASSWORD: {{ secrets.ORG_GRADLE_PROJECT_SONATYPE_PASSWORD }}    
+        SONATYPE_USERNAME: ${{ secrets.ORG_GRADLE_PROJECT_SONATYPE_USERNAME }}
+        SONATYPE_PASSWORD: ${{ secrets.ORG_GRADLE_PROJECT_SONATYPE_PASSWORD }}
       run: |
         cd ${{ github.workspace }}/clients/java
         gradle closeAndReleaseRepository -PSIGNINGPASSWORD="$SIGNINGPASSWORD" -PSONATYPE_USERNAME="$SONATYPE_USERNAME" -PSONATYPE_PASSWORD="$SONATYPE_PASSWORD"
