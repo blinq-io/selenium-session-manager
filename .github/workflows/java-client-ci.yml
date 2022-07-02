@@ -29,7 +29,11 @@ jobs:
       with:
         java-version: '8'
         distribution: 'temurin'
-    - name: Build with Gradle
+    - name: build and publish
       run: |
         cd ${{ github.workspace }}/clients/java
-        gradle clean publish closeAndReleaseRepository
+        gradle publish
+    - name: closeAndReleaseRepository
+      run: |
+        cd ${{ github.workspace }}/clients/java
+        gradle closeAndReleaseRepository        
