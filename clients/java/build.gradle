@@ -72,6 +72,8 @@ publishing {
         }
     }
     repositories {
+        println findProperty('SONATYPE_USERNAME')
+        println findProperty('SONATYPE_PASSWORD')
         maven {
             name = "OSSRH"
             url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
