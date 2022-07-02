@@ -29,6 +29,9 @@ jobs:
       with:
         java-version: '8'
         distribution: 'temurin'
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v3
+      timeout-minutes: 15
     - name: build and publish
       run: |
         cd ${{ github.workspace }}/clients/java
