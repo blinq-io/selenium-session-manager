@@ -13,12 +13,11 @@ There are several advantages to bypass the application login screen:
 
 ## The solution's main components
 The Seleniun Session Manager installation process comprises of three parts: installing the Selenium Session Server (SSS), installing the Selenium Session Extension (SSE) and adding the Selenium Session Client (SSC) to your selenium project.
-1. Selenium Session Extension (SSE) - a Chrome extention that enables to copy the session information and store it in the Selenium Session Server (https://github.com/blinq-io/selenium-session-manager/blob/master/extension).
-2. Selenium Session Server (SSS)- a server that store all the session cookies (https://github.com/blinq-io/selenium-session-manager/tree/master/server).
-3. Selenium Session Client (SSC) - a client that integrates into your tests, retrieves the session information from the Selenium Session Server and applies the session cookies into the running selenium browser (https://github.com/blinq-io/selenium-session-manager/tree/master/clients).
+1. Selenium Session Extension (SSE) - a Chrome extention that enables to copy the session information and store it in the Selenium Session Server [Read more](https://github.com/blinq-io/selenium-session-manager/blob/master/extension).
+2. Selenium Session Server (SSS)- a server that store all the session cookies [Read more](https://github.com/blinq-io/selenium-session-manager/tree/master/server).
+3. Selenium Session Client (SSC) - a client that integrates into your tests, retrieves the session information from the Selenium Session Server and applies the session cookies into the running selenium browser [Read more](https://github.com/blinq-io/selenium-session-manager/tree/master/clients).
 
 
 ## Prerequisites
 Your selenium project should be using **Selenium 4.x** or greater. This version is required due to the use of the DevTools capabilities available in this version.
 The solution will work only for **browsers that support DevTools** capabilities.
-
