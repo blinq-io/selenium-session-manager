@@ -11,6 +11,7 @@ on:
   push:
     branches: [ "master" ]
   pull_request:
+    paths: clients/java/**
     branches: [ "master" ]
 
 permissions:
