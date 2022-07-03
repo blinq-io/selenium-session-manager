@@ -5,6 +5,7 @@ Note that support to the Selenium Session Manager and its components is availabl
 
 Following is a code example to integrate it into your Java Selenium tests:
 ```java
+// import the selenium-session-client package
 import io.blinq.session.SeleniumSessionClient;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -12,6 +13,8 @@ public class SeleniumTest {
     public static void main(String...args) throws Exception{
         System.setProperty("webdriver.chrome.driver","chromedriver.exe");
         ChromeDriver driver = new ChromeDriver();
+        
+        // init the selenium session using a preset saved session with 'github' tag
         SeleniumSessionClient.initSession(driver, "github");
         driver.get("https://github.com/");
         Thread.sleep(5000);
