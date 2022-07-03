@@ -14,6 +14,8 @@ PM> Install-Package SeleniumSessionClient
 Following is a code example to integrate it into your C# Selenium tests:
 ```cs
     ChromeDriver driver = new ChromeDriver(); // Make sure chromedriver is in your path
+    
+    // init the selenium session using a preset saved session with 'github' tag
     await SeleniumSessionClient.SeleniumSessionClient.initSession(driver, new string [] { "github"});
     driver.Url = "https://github.com";
     Thread.Sleep(5000);
