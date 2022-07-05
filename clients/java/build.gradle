@@ -179,4 +179,6 @@ nexusStaging {
     serverUrl = "https://s01.oss.sonatype.org/service/local/"
     username = findProperty('SONATYPE_USERNAME')
     password = findProperty('SONATYPE_PASSWORD')
+    println username
+    println password
 }
