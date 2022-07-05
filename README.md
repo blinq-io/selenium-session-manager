@@ -20,6 +20,10 @@ The Seleniun Session Manager installation process comprises of three parts: inst
 ## Getting started video
 [![Watch the video](https://img.youtube.com/vi/zf5PJjMtnpE/0.jpg)](https://www.youtube.com/watch?v=zf5PJjMtnpE)
 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=zf5PJjMtnpE
+" target="_blank"><img src="http://img.youtube.com/vi/zf5PJjMtnpE/0.jpg" 
+alt="Getting started video" width="240" height="180" border="10" /></a>
+
 ## Prerequisites
 Your selenium project should be using **Selenium 4.x** or greater. This version is required due to the use of the DevTools capabilities available in this version.
 The solution will work only for **browsers that support DevTools** capabilities.
