@@ -19,8 +19,8 @@ The Seleniun Session Manager installation process comprises of three parts: inst
 
 ## Getting started video
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=zf5PJjMtnpE
-" target="_blank"><img src="http://img.youtube.com/vi/zf5PJjMtnpE/0.jpg" 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=08hNHdXbuwA
+" target="_blank"><img src="http://img.youtube.com/vi/08hNHdXbuwA/0.jpg" 
 alt="Getting started video" width="500" border="10" /></a>
 
 ## Prerequisites
